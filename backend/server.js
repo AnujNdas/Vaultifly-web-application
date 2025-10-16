@@ -11,8 +11,14 @@ const app = express();
 
 console.log("Brevo API Key:", process.env.BREVO_API_KEY ? "Loaded ✅" : "Missing ❌");
 
-
-app.use(cors());
+// ✅ Allow frontend URLs
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "https://vaultifly-frontend.onrender.com"], // add your frontend URLs
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    credentials: true,
+  })
+);
 app.use(bodyParser.json());
 
 // Connect DB
