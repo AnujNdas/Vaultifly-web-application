@@ -33,7 +33,7 @@ const LoginForm = () => {
         sessionStorage.setItem("username", data.username);
 
         // ✅ Navigate to landing page
-        navigate("/landing");
+        navigate("/");
       } else {
         setMessage(data.message || "Login failed ❌");
       }
