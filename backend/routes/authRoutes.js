@@ -1,6 +1,6 @@
 const express = require("express");
 const { sendOtp, verifyOtpAndSignup, login, getUserData, changePassword ,forgotPassword , resetPassword } = require("../controllers/authControllers");
-const authenticateToken = require("../Middleware/Authentication-token");
+const authenticateToken = require("../middleware/Authentication-token");
 
 const router = express.Router();
 
