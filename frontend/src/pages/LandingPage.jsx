@@ -7,8 +7,10 @@ import left from '../images/left.png';
 import top from '../images/top.png';
 import bottom from '../images/bottom.png';
 import logo from "../images/logo.png";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const LandingPage = () => {
+  const navigate = useNavigate();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("Work");
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -21,6 +23,10 @@ const LandingPage = () => {
     document.body.className = isDarkMode ? "dark-mode" : "light-mode";
   }, [isDarkMode]);
 
+
+  const handleredirect = () => {
+    navigate('/login')
+  }
   const dashboardContent = {
     Asset: (
       <div className="score-card">
@@ -127,7 +133,7 @@ const LandingPage = () => {
 
           {dropdownOpen && (
             <div className="dropdown">
-              <button onClick={() => alert("Redirecting to Sign Up...")}>
+              <button onClick={handleredirect} >
                 Sign Up
               </button>
 
