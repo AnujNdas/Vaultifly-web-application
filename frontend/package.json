@@ -2,9 +2,10 @@
   "name": "package.json",
   "private": true,
   "version": "0.0.0",
-  "engines": {
-    "node": "18.x"
-  },
+"engines": {
+  "node": "20.x"
+},
+
   "type": "module",
   "scripts": {
     "dev": "vite",
