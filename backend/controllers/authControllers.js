@@ -106,11 +106,20 @@ const login = async (req, res) => {
       { expiresIn: "3h" }
     );
 
-    res.json({ message: "Logged in!", token, role: user.role, userId: user._id, username: user.username });
+    res.status(200).json({
+      message: "Logged in!",
+      token,
+      role: user.role,
+      userId: user._id,
+      username: user.username,
+      email: user.email, // ✅ Added for frontend
+    });
   } catch (error) {
+    console.error("Login error:", error);
     res.status(500).json({ error: "Error logging in!" });
   }
 };
+
 
 /* ----------------------------- FORGOT PASSWORD ---------------------------- */
 const forgotPassword = async (req, res) => {

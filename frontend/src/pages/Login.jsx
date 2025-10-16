@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // 👈 Add this
 import "../styles/Login.css";
 
 const LoginForm = () => {
@@ -10,7 +11,8 @@ const LoginForm = () => {
   const [otpSent, setOtpSent] = useState(false);
   const [message, setMessage] = useState("");
 
-  const BASE_URL = "https://vaultifly-backend.onrender.com/api/auth"; // change this!
+  const navigate = useNavigate(); // 👈 Initialize navigation
+  const BASE_URL = "https://vaultifly-backend.onrender.com/api/auth";
 
   /* ---------------------- LOGIN FUNCTION ---------------------- */
   const handleLogin = async () => {
@@ -24,7 +26,14 @@ const LoginForm = () => {
 
       if (res.ok) {
         setMessage("Login successful ✅");
-        localStorage.setItem("token", data.token);
+
+        // ✅ Store user info and token in session storage
+        sessionStorage.setItem("token", data.token);
+        sessionStorage.setItem("email", data.email);
+        sessionStorage.setItem("username", data.username);
+
+        // ✅ Navigate to landing page
+        navigate("/landing");
       } else {
         setMessage(data.message || "Login failed ❌");
       }
