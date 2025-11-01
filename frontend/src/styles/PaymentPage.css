@@ -1,0 +1,135 @@
+/* Main Container */
+.payment-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  padding: 3rem;
+  min-height: 100vh;
+  background: transparent;
+  transition: 0.3s;
+}
+
+/* Light Mode Variables */
+.light-mode {
+  --bg: #f7f7f7;
+  --card-bg: #ffffff;
+  --text: #222;
+  --border: #ddd;
+  --button-bg: #4a90e2;
+  --button-text: #fff;
+}
+
+/* Left Section - Plan Summary */
+.plan-summary {
+  width: 30%;
+}
+
+.summary-card {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.summary-card h3 {
+  font-size: 1.5rem;
+}
+
+.summary-card .price {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0.8rem 0;
+}
+
+.summary-card ul {
+  margin: 1rem 0;
+  padding-left: 1.2rem;
+}
+
+.change-plan-btn {
+  margin-top: 1rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Right Section - Payment Form */
+.payment-form {
+  width: 40%;
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.payment-form h2 {
+  margin-bottom: 1.2rem;
+}
+
+.payment-form form label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.payment-form input {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  margin-top: 0.3rem;
+  background-color: #f0f0f0;
+  outline: none;
+  transition: 0.2s;
+}
+
+.payment-form input:focus {
+  box-shadow: 0 0 4px var(--button-bg);
+}
+
+/* Card Row */
+.card-row {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Pay Button */
+.pay-btn {
+  width: 100%;
+  background: var(--button-bg);
+  color: var(--button-text);
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: 0.3s;
+}
+
+.pay-btn:hover {
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.secure-text {
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  color: gray;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .payment-page {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .plan-summary,
+  .payment-form {
+    width: 100%;
+    max-width: 450px;
+  }
+}

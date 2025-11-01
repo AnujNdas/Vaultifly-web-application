@@ -229,7 +229,13 @@ const LandingPage = () => {
                   <li key={i}><span className="verify_icon">&#9745;</span> {f}</li>
                 ))}
               </ul>
-              <button>Subscribe</button>
+              <button
+  onClick={() => navigate("/order-summary", { state: { plan } })}
+>
+  Subscribe
+</button>
+
+
             </div>
           ))}
         </div>
